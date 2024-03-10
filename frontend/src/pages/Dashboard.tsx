@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import './LandingPage.css';
 
 interface User {
     UserID: string;
-    UserName: string;
-    Email: string;
+    userName: string;
+    email: string;
     Transactions: object,
 }
 
@@ -13,7 +14,7 @@ const Dashboard = () => {
 
     useEffect(() => {
         const fetchProfile = () => {
-            const token = localStorage.getItem('userToken');
+            const token = localStorage.getItem('token');
             fetch('http://localhost:9020/profile', {
                 headers: {
                     Authorization: `Bearer ${token}`,
@@ -39,14 +40,14 @@ const Dashboard = () => {
     return (
         <div>
             <h1>Dashboard</h1>
-            <p>Welcome back, {userData?.UserName}! Here's your financial overview.</p>
+            <p>Welcome back, {userData?.userName}! Here's your financial overview.</p>
             {/* Display transactions and other user data */}
             <div className="actions">
-                <Link to="/create-transaction">New Transaction</Link>
-                <Link to="/create-budget">New Budget</Link>
+                <Link to="/create-transaction" className="dashboard-button">New Transaction</Link>
+                <Link to="/create-budget" className="dashboard-button">New Budget</Link>
             </div>
         </div>
     );
 }
 
-export default  Dashboard;
+export default Dashboard;

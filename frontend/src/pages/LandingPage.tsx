@@ -9,6 +9,7 @@ const LandingPage = () => {
                 <h1>FinTrackPro</h1>
                 <nav className="navigation">
                     <Link to="/register" className="nav-link">Register</Link>
+                    <Link to="/login" className="nav-link">Login</Link>
                     <Link to="/about" className="nav-link">About</Link>
                 </nav>
             </header>

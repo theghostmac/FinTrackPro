@@ -3,6 +3,7 @@ import LandingPage from './pages/LandingPage';
 import Error404 from './pages/Error404';
 import Register from './pages/Register'
 import Dashboard from './pages/Dashboard';
+import Login from "./pages/Login.tsx";
 import './App.css';
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
                 <Route path="/" element={<LandingPage />} />
                 <Route path="/register" element={<Register />} />
                 <Route path="/dashboard" element={<Dashboard />} />
+                <Route path="/login" element={<Login />} />
                 {/* Add routes for creating transactions and budgets */}
                 {/*<Route path="/create-transaction" element={<CreateTransaction />} />*/}
                 {/*<Route path="/create-budget" element={<CreateBudget />} />*/}

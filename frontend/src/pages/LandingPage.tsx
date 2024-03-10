@@ -1,27 +1,37 @@
-import React from 'react';
-import reactLogo from '../assets/react.svg'
-import viteLogo from '../../public/vite.svg'
+import financeImage from '../assets/personal-finance.png';
 import { Link } from 'react-router-dom';
+import './LandingPage.css';
 
 const LandingPage = () => {
     return (
-        <div>
-            <div>
-                <a href="https://vitejs.dev" target="_blank">
-                    <img src={viteLogo} className="logo" alt="Vite logo"/>
-                </a>
-                <a href="https://react.dev" target="_blank">
-                    <img src={reactLogo} className="logo react" alt="React logo"/>
-                </a>
-            </div>
-            <h1>Welcome to FinTrackPro</h1>
-            <p> Your personal finance tracker. </p>
-            <Link to ="/register">
-                <button>Register</button>
-            </Link>
-            <p className="read-the-docs">
-                Click on the Vite and React logos to learn more about the technologies powering FinTrackPro.
-            </p>
+        <div className="landing-container">
+            <header className="header">
+                <h1>FinTrackPro</h1>
+                <nav className="navigation">
+                    <Link to="/register" className="nav-link">Register</Link>
+                    <Link to="/about" className="nav-link">About</Link>
+                </nav>
+            </header>
+            <main className="main-content">
+                <section className="intro-section">
+                    <h2>...Your Personal Finance Tracker</h2>
+                    <p>Don't fall trap to Parkinson's Law:</p>
+                    <blockquote>
+                        "As your income increases your expenses will rise to meet or exceed that increase."
+                    </blockquote>
+                </section>
+                <section className="feature-image">
+                    <img src={financeImage} alt="Personal Finance" />
+                </section>
+            </main>
+            <footer className="footer">
+                <p>Built with Golang and React - TS</p>
+                <div className="social-links">
+                    <a href="https://github.com/theghostmac/FinTrackPro" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    <Link to="/about">About</Link>
+                    <a href="https://x.com/ghostmac9" target="_blank" rel="noopener noreferrer">Twitter</a>
+                </div>
+            </footer>
         </div>
     );
 };

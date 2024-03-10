@@ -42,6 +42,7 @@ func InitRouter() *gin.Engine {
 	router.PUT("/user", users.UpdateUserProfileHandler)
 	router.POST("/transaction", users.CreateTransactionHandler)
 	router.POST("/budget", users.CreateBudgetHandler)
+	router.GET("/profile", users.GetMyProfileHandler)
 
 	return router
 }

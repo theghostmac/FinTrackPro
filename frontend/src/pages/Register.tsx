@@ -1,4 +1,5 @@
-import React, { useState, ChangeEvent, FormEvent } from 'react';
+import { useState, ChangeEvent, FormEvent } from 'react';
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
     const [form, setForm] = useState({
@@ -6,6 +7,8 @@ const Register = () => {
         email: '',
         password: '',
     });
+
+    const navigate = useNavigate();
 
     const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
@@ -27,7 +30,7 @@ const Register = () => {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
             console.log('User registered successfully');
-            // Handle successful registration, e.g., redirect to login page
+            navigate('/dashboard');
         } catch (error) {
             console.error('There was an error registering the user:', error);
         }

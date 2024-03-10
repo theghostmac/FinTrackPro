@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:latest
+#     command: ["postgres", "-c", "shared_preload_libraries=uuid-ossp"]
+    environment:
+      POSTGRES_DB: fintrackpro_db
+      POSTGRES_USER: fintrackpro_user
+      POSTGRES_PASSWORD: f1ntr4ckpr0
+      # Set the default timezone for the database container
+      TZ: Africa/Lagos
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    # Ensures the database service starts before any application service that depends on it
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U fintrackpro_user -d fintrackpro_db"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  postgres_data:
+
+# CREATE EXTENSION IF NOT EXISTS "uuid-ossp";

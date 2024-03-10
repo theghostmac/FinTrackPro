@@ -1,7 +1,7 @@
-import { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import LandingPage from './pages/LandingPage';
 import Error404 from './pages/Error404';
+import Register from './pages/Register.tsx'
 import './App.css';
 
 function App() {
@@ -9,6 +9,8 @@ function App() {
         <Router>
             <Routes>
                 <Route path="/" element={<LandingPage />} />
+                <Route path="/register" element={<Register />} />
+
                 <Route path="*" element={<Error404 />} />
             </Routes>
         </Router>

@@ -1,6 +1,7 @@
-// import React from 'react';
+import React from 'react';
 import reactLogo from '../assets/react.svg'
 import viteLogo from '../../public/vite.svg'
+import { Link } from 'react-router-dom';
 
 const LandingPage = () => {
     return (
@@ -14,16 +15,15 @@ const LandingPage = () => {
                 </a>
             </div>
             <h1>Welcome to FinTrackPro</h1>
-            <div className="card">
-                <p>Your personal finance tracker.</p>
+            <p> Your personal finance tracker. </p>
+            <Link to ="/register">
                 <button>Register</button>
-            </div>
+            </Link>
             <p className="read-the-docs">
                 Click on the Vite and React logos to learn more about the technologies powering FinTrackPro.
             </p>
         </div>
     );
-
 };
 
 export default  LandingPage;
